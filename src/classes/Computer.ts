@@ -43,18 +43,22 @@ class Computer extends Player {
 			}
 			if (horizontalRate === this.columns - 1) {
 				winningMove.push(horizontalMove);
-			} else if (diameterRate === this.columns - 1) {
+			}
+			if (diameterRate === this.columns - 1) {
 				winningMove.push(diameterMove);
-			} else if (reverseDiameterRate === this.columns - 1) {
+			}
+			if (reverseDiameterRate === this.columns - 1) {
 				winningMove.push(reverseDiameterMove);
-			} else if (verticalRate === this.columns - 1) {
+			}
+			if (verticalRate === this.columns - 1) {
 				winningMove.push(verticalMove);
 			}
 		}
 
 		winningMove = winningMove.filter((item) =>
-			item && !opponent[item[0]][item[1]] ? item : undefined
+			item && !opponent[item[0]][item[1]] ? true : false
 		);
+
 		return winningMove[random(0, winningMove.length - 1)];
 	};
 

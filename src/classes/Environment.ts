@@ -70,7 +70,6 @@ class Environment {
 				this.turn = this.player;
 				this.computer.doClick(this.player);
 			}
-
 			requestAnimationFrame(this.animate);
 		}
 	};
